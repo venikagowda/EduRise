@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRise AI - Learn Smarter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">🎓 EduRise <span>AI</span></h2>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">🏠 Dashboard</a>
+            <a href="#subjects" class="nav-link">📚 My Subjects</a>
+            <a href="#planner" class="nav-link">📅 Study Planner</a>
+            <a href="#video-tutorials" class="nav-link">🎬 Video Tutorials</a>
+            <a href="#quiz" class="nav-link">📝 Practice Quiz</a>
+            <a href="#tutor" class="nav-link">🤖 AI Tutor</a>
+            <a href="#focus" class="nav-link">⏱️ Focus Timer</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Keep learning, keep growing! 🌱</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dashboard -->
+        <header id="dashboard" class="topbar">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+                <h1>Welcome to EduRise AI! 👋</h1>
+                <p class="muted">Learn smarter, stay focused, and achieve more.</p>
+            </div>
+            <div class="profile">🎓 Student</div>
+        </header>
+
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <div>
+                <p class="banner-small">YOUR DAILY REMINDER</p>
+                <h2>Small steps lead to big success.</h2>
+                <p>Make today count. Your future self will thank you!</p>
+                <a href="#planner" class="banner-button">Plan My Study →</a>
+            </div>
+            <div class="banner-emoji">🚀</div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon purple">📚</div>
+                <p>My Subjects</p>
+                <h2>4</h2>
+                <span>Subjects to explore</span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green">✅</div>
+                <p>Completed Tasks</p>
+                <h2 id="completed-count">0</h2>
+                <span>Study planner progress</span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange">🎯</div>
+                <p>Quiz Score</p>
+                <h2 id="quiz-score">0%</h2>
+                <span>Latest practice score</span>
+            </article>
+        </section>
+
+        <!-- Subjects -->
+        <section id="subjects" class="content-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR LEARNING SPACE</p>
+                    <h2>My Subjects</h2>
+                </div>
+            </div>
+
+            <div class="subjects-grid">
+                <article class="subject-card">
+                    <div class="subject-icon purple">➗</div>
+                    <h3>Mathematics</h3>
+                    <p>Practice formulas and solve problems.</p>
+                    <a href="#video-tutorials">Explore lessons →</a>
+                </article>
+
+                <article class="subject-card">
+                    <div class="subject-icon blue">⚛️</div>
+                    <h3>Physics</h3>
+                    <p>Understand concepts and experiments.</p>
+                    <a href="#video-tutorials">Explore lessons →</a>
+                </article>
+
+                <article class="subject-card">
+                    <div class="subject-icon orange">🧪</div>
+                    <h3>Chemistry</h3>
+                    <p>Learn reactions and important concepts.</p>
+                    <a href="#video-tutorials">Explore lessons →</a>
+                </article>
+
+                <article class="subject-card">
+                    <div class="subject-icon green">💻</div>
+                    <h3>Computer Science</h3>
+                    <p>Build your coding and problem-solving skills.</p>
+                    <a href="#video-tutorials">Explore lessons →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Study Planner -->
+        <section id="planner" class="content-section panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">STAY ORGANIZED</p>
+                    <h2>📅 Study Planner</h2>
+                    <p class="muted">Add your tasks and track your progress.</p>
+                </div>
+            </div>
+
+            <form id="task-form" class="task-form">
+                <input
+                    type="text"
+                    id="task-input"
+                    placeholder="What do you want to study?"
+                    required
+                >
+
+                <select id="task-subject" aria-label="Choose subject">
+                    <option value="General">General</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Computer Science">Computer Science</option>
+                </select>
+
+                <button type="submit" class="primary-button">+ Add Task</button>
+            </form>
+
+            <div class="task-summary">
+                <span id="task-total">0 tasks</span>
+                <span id="task-progress">0 completed</span>
+            </div>
+
+            <ul id="task-list" class="task-list"></ul>
+        </section>
+
+        <!-- Video Tutorials: directly below Study Planner -->
+        <section id="video-tutorials" class="content-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">WATCH • LEARN • PRACTICE</p>
+                    <h2>🎬 Video Tutorials</h2>
+                    <p class="muted">Learn difficult topics through video lessons.</p>
+                </div>
+            </div>
+
+            <div class="video-filters">
+                <button class="filter-btn active" data-filter="all">All Videos</button>
+                <button class="filter-btn" data-filter="math">Mathematics</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="science">Science</button>
+            </div>
+
+            <div class="video-grid">
+                <article class="video-card" data-category="programming">
+                    <div class="video-frame">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/rfscVS0vtbw"
+                            title="Python Programming for Beginners"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag programming-tag">Programming</span>
+                        <h3>Python for Beginners</h3>
+                        <p>Learn programming fundamentals and write your first Python programs.</p>
+                        <a href="https://www.youtube.com/watch?v=rfscVS0vtbw"
+                           target="_blank" rel="noopener noreferrer">
+                            Watch on YouTube ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="programming">
+                    <div class="video-frame">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/UB1O30fR-EE"
+                            title="HTML Tutorial for Beginners"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag programming-tag">Programming</span>
+                        <h3>HTML for Beginners</h3>
+                        <p>Understand the building blocks of web pages.</p>
+                        <a href="https://www.youtube.com/watch?v=UB1O30fR-EE"
+                           target="_blank" rel="noopener noreferrer">
+                            Watch on YouTube ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="programming">
+                    <div class="video-frame">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/yfoY53QXEnI"
+                            title="CSS Tutorial for Beginners"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag programming-tag">Programming</span>
+                        <h3>CSS for Beginners</h3>
+                        <p>Learn to style websites with colors, layouts, and spacing.</p>
+                        <a href="https://www.youtube.com/watch?v=yfoY53QXEnI"
+                           target="_blank" rel="noopener noreferrer">
+                            Watch on YouTube ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="math">
+                    <div class="video-thumbnail math-thumbnail">
+                        <span>➗</span>
+                        <p>Mathematics</p>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag math-tag">Mathematics</span>
+                        <h3>Algebra and Equations</h3>
+                        <p>Find lessons to practice algebra and solve equations.</p>
+                        <a href="https://www.youtube.com/results?search_query=algebra+and+equations+for+beginners"
+                           target="_blank" rel="noopener noreferrer">
+                            Find Videos ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="science">
+                    <div class="video-thumbnail science-thumbnail">
+                        <span>⚛️</span>
+                        <p>Science</p>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag science-tag">Science</span>
+                        <h3>Basic Physics Concepts</h3>
+                        <p>Explore physics topics through educational video lessons.</p>
+                        <a href="https://www.youtube.com/results?search_query=basic+physics+concepts+for+students"
+                           target="_blank" rel="noopener noreferrer">
+                            Find Videos ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="science">
+                    <div class="video-thumbnail chemistry-thumbnail">
+                        <span>🧪</span>
+                        <p>Chemistry</p>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag science-tag">Science</span>
+                        <h3>Chemistry Basics</h3>
+                        <p>Revise atoms, elements, reactions, and chemical concepts.</p>
+                        <a href="https://www.youtube.com/results?search_query=chemistry+basics+for+students"
+                           target="_blank" rel="noopener noreferrer">
+                            Find Videos ↗
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz" class="content-section panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">TEST YOUR KNOWLEDGE</p>
+                    <h2>📝 Quick Practice Quiz</h2>
+                    <p class="muted">Answer these questions and check your score.</p>
+                </div>
+            </div>
+
+            <div id="quiz-container">
+                <p id="question-number" class="question-number">Question 1 of 3</p>
+                <h3 id="question-text">Loading question...</h3>
+                <div id="answer-options" class="answer-options"></div>
+                <p id="quiz-feedback" aria-live="polite"></p>
+                <button id="next-question" class="primary-button" hidden>
+                    Next Question →
+                </button>
+                <button id="restart-quiz" class="secondary-button" hidden>
+                    Try Again
+                </button>
+            </div>
+        </section>
+
+        <!-- AI Tutor -->
+        <section id="tutor" class="content-section panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR STUDY COMPANION</p>
+                    <h2>🤖 AI Tutor</h2>
+                    <p class="muted">Ask a question to try the tutor demo.</p>
+                </div>
+            </div>
+
+            <div class="chat-box">
+                <div id="chat-messages" class="chat-messages" aria-live="polite">
+                    <div class="chat-message bot-message">
+                        Hi! 👋 I'm your EduRise study assistant demo. Ask me about
+                        Mathematics, Physics, Chemistry, or Programming.
+                    </div>
+                </div>
+
+                <form id="chat-form" class="chat-form">
+                    <input
+                        type="text"
+                        id="chat-input"
+                        placeholder="Type your study question..."
+                        required
+                    >
+                    <button type="submit" class="primary-button">Send</button>
+                </form>
+            </div>
+            <p class="demo-note">Note: This is a rule-based demo, not a live AI service.</p>
+        </section>
+
+        <!-- Focus Timer -->
+        <section id="focus" class="content-section panel focus-panel">
+            <p class="eyebrow">STUDY WITHOUT DISTRACTIONS</p>
+            <h2>⏱️ Focus Timer</h2>
+            <p class="muted">Try a short focus session, then take a break.</p>
+
+            <div id="timer-display" class="timer-display">25:00</div>
+
+            <div class="timer-buttons">
+                <button id="start-timer" class="primary-button">▶ Start</button>
+                <button id="pause-timer" class="secondary-button">⏸ Pause</button>
+                <button id="reset-timer" class="secondary-button">↻ Reset</button>
+            </div>
+            <p id="timer-message" aria-live="polite">Ready when you are!</p>
+        </section>
+
+        <footer>
+            <p>Made with 💜 for learners | EduRise AI © 2026</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
